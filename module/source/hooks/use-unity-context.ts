@@ -212,6 +212,7 @@ const useUnityContext = (unityConfig: IUnityConfig): IUnityContextHook => {
     addEventListener: eventSystem.addEventListener,
     removeEventListener: eventSystem.removeEventListener,
     UNSAFE__detachAndUnloadImmediate,
+    unityInstance
   };
 };
 

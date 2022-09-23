@@ -86,6 +86,11 @@ interface IUnityContextHook extends IEventSystemHook {
    * @returns A promise that resolves when the UnityInstance has been unloaded.
    */
   readonly UNSAFE__detachAndUnloadImmediate: () => Promise<void>;
+
+    /**
+   * Gets the Unity Context's Unity Instance.
+   */
+     readonly unityInstance: UnityInstance | null;
 }
 
 export type { IUnityContextHook };

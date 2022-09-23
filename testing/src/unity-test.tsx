@@ -14,6 +14,7 @@ function UnityTest() {
     removeEventListener,
     takeScreenshot,
     unload,
+    unityInstance
   } = useUnityContext({
     codeUrl: `/unity-build/communication-tests.wasm`,
     dataUrl: `/unity-build/communication-tests.data`,
@@ -41,6 +42,13 @@ function UnityTest() {
       setScreenshots([...screenshots, screenshot]);
     }
   }
+
+  useEffect(() => {
+    if (isLoaded) {
+      console.log("Unity Instance", unityInstance);
+    }
+  }, [isLoaded]
+  );
 
   useEffect(() => {
     function logParametersToConsole(...parameters: any[]) {
